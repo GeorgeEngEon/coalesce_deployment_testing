@@ -1,0 +1,121 @@
+steps:
+  STG_PAYMENT-da7d2e2d-3f81-4dda-abb9-81d70f675dcc:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      deployEnabled: true
+      description: Payment data as defined by stripe
+      isDataVault: false
+      isMultisource: false
+      locationName: WORK
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 60f1a60a-a651-40e2-92a8-9f01b5881460
+              stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PAYMENT_ID
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: ee8211d2-80df-46f8-b825-63b3fb8505de
+                    stepCounter: a4aca43e-0c37-4181-b73d-3f4a4e93e8bf
+                transform: ""
+          - columnReference:
+              columnCounter: 06213a8c-cd2e-4052-a6f2-675f638332b2
+              stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
+            dataType: VARCHAR(25)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ORDER_ID
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 9e7e4514-db60-4b1a-8d3f-0b6dda8901ba
+                    stepCounter: a4aca43e-0c37-4181-b73d-3f4a4e93e8bf
+                transform: ""
+          - columnReference:
+              columnCounter: adafc55b-beb6-4570-82a2-040df156cdaf
+              stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PAYMENT_METHOD
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 15d02f54-0016-41d2-87dd-e5b40768e18a
+                    stepCounter: a4aca43e-0c37-4181-b73d-3f4a4e93e8bf
+                transform: ""
+          - columnReference:
+              columnCounter: 5622137c-fc46-4d17-bdc3-fedf7e0abeaa
+              stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
+            dataType: VARCHAR(40)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: STATUS
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: d179464f-990f-48c3-9211-64c389b0b503
+                    stepCounter: a4aca43e-0c37-4181-b73d-3f4a4e93e8bf
+                transform: "" 
+          - columnReference:
+              columnCounter: 9d5a279d-847d-45b8-a7c1-a378361d72c0
+              stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
+            dataType: DECIMAL
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: AMOUNT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 716fdbf5-c67c-4e24-943c-47d770cbf93c
+                    stepCounter: a4aca43e-0c37-4181-b73d-3f4a4e93e8bf
+                transform: ""
+          - columnReference:
+              columnCounter: fe92e18b-a30e-437c-84cb-4056952ffffd
+              stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
+            dataType: DATE
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: CREATED_AT
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 25dd1e5c-9628-4074-8839-41a086c739bd
+                    stepCounter: a4aca43e-0c37-4181-b73d-3f4a4e93e8bf
+                transform: ""                                                
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: RAW_2
+                nodeName: PAYMENT
+            join:
+              joinCondition: FROM {{ ref('RAW_2', 'PAYMENT') }} "PAYMENT"
+            name: STG_PAYMENT
+            noLinkRefs: []
+      name: STG_PAYMENT
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: da7d2e2d-3f81-4dda-abb9-81d70f675dcc
