@@ -1,0 +1,94 @@
+steps:
+  ORDERS-5bf764e5-ef46-4fe6-b148-4c41063a44c7:
+    operation:
+      database: ""
+      dataset: ""
+      deployEnabled: true
+      description: orders data for jaffle shop.
+      locationID: ""
+      locationName: RAW_1
+      metadata:
+        columns:
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 61cf2707-a55d-47e6-80ac-16972372761e
+              stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+            config: {}
+            dataType: NUMBER
+            defaultValue: ""
+            description: ""
+            name: ID
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 5e6d66d0-0981-4394-936f-a6a8382b164a
+              stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+            config: {}
+            dataType: NUMBER
+            defaultValue: ""
+            description: ""
+            name: USER_ID
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 45bf2341-de71-40b8-8155-ca699c2c8fe0
+              stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+            config: {}
+            dataType: DATE
+            defaultValue: ""
+            description: ""
+            name: ORDER_DATE
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 14a06b84-1633-48ac-9fdc-ae77fd163e98
+              stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+            config: {}
+            dataType: VARCHAR(16777216)
+            defaultValue: ""
+            description: ""
+            name: STATUS
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+          - acceptedValues:
+              strictMatch: true
+              values: []
+            appliedColumnTests: {}
+            columnReference:
+              columnCounter: 31b168f9-e9db-444c-89f6-0b39c1777ce6
+              stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+            config: {}
+            dataType: TIMESTAMP_NTZ(9)
+            defaultValue: ""
+            description: ""
+            name: _ETL_LOADED_AT
+            nullable: false
+            primaryKey: false
+            uniqueKey: false
+        join:
+          joinCondition: FROM {{ ref('RAW_1', 'ORDERS') }}
+      name: ORDERS
+      schema: ""
+      sqlType: Source
+      table: ORDERS
+      type: sourceInput
+    stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
