@@ -1,0 +1,79 @@
+steps:
+  STG_ORDERS_COALASCE-7b7aee5f-98a5-4df9-a558-453a06f5fdcd:
+    operation:
+      config:
+        insertStrategy: INSERT
+        postSQL: ""
+        preSQL: ""
+        testsEnabled: true
+        truncateBefore: true
+      database: ""
+      deployEnabled: true
+      description: Orders data as defined by TPC-H
+      isDataVault: false
+      isMultisource: false
+      locationName: WORK
+      materializationType: table
+      metadata:
+        appliedNodeTests: []
+        columns:
+          - columnReference:
+              columnCounter: 939d7678-fc88-4269-af22-b2b993f38d85
+              stepCounter: 7b7aee5f-98a5-4df9-a558-453a06f5fdcd
+            dataType: INTEGER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: ID
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 61cf2707-a55d-47e6-80ac-16972372761e
+                    stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+                transform: ""
+          - columnReference:
+              columnCounter: 6024e042-c79d-4324-8643-1b2517eb87ae
+              stepCounter: 7b7aee5f-98a5-4df9-a558-453a06f5fdcd
+            dataType: INTEGER
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: PRODUCT_ID
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 5e6d66d0-0981-4394-936f-a6a8382b164a
+                    stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+                transform: ""
+          - columnReference:
+              columnCounter: a92a1086-4fbf-434e-9b27-9c48ae31c10a
+              stepCounter: 7b7aee5f-98a5-4df9-a558-453a06f5fdcd
+            dataType: VARCHAR(50)
+            description: ""
+            hashColumns: []
+            hashDetails: null
+            name: STATE
+            nullable: false
+            sourceColumnReferences:
+              - columnReferences:
+                  - columnCounter: 45bf2341-de71-40b8-8155-ca699c2c8fe0
+                    stepCounter: 5bf764e5-ef46-4fe6-b148-4c41063a44c7
+                transform: ""
+        cteString: ""
+        enabledColumnTestIDs: []
+        sourceMapping:
+          - customSQL:
+              customSQL: ""
+            dependencies:
+              - locationName: WORK
+                nodeName: ORDERS_COALASCE
+            join:
+              joinCondition: FROM {{ ref('WORK', 'ORDERS_COALASCE') }} "ORDERS_COALASCE"
+            name: STG_ORDERS_COALASCE
+            noLinkRefs: []
+      name: STG_ORDERS_COALASCE
+      overrideSQL: false
+      schema: ""
+      sqlType: Stage
+      type: sql
+    stepCounter: 7b7aee5f-98a5-4df9-a558-453a06f5fdcd
